@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: api_equals
+
+  redis:
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1
+    url: redis://192.168.108.127:6379
+    database: 2
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 721000
+    url: jdbc:mysql://localhost:3306/api?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
+    type: com.zaxxer.hikari.HikariDataSource
+
+  thymeleaf:
+    cache: false
+
+
+mybatis:
+  base-packages: com.tang.api.domain
+  mapper-locations: mapper/*.xml
+
+server:
+  port: 8080
